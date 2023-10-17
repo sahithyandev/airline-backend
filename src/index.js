@@ -3,7 +3,7 @@ const app = express();
 const mysql = require("./mysql-connector");
 
 // routes
-const { checkLogin } = require("./routes/checkLogin");
+const checkLogin = require("./routes/check-login");
 
 app.use(express.json());
 

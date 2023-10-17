@@ -49,4 +49,5 @@ function checkLogin(request, response) {
 		}
 	);
 }
-exports.checkLogin = checkLogin;
+
+module.exports = checkLogin;
