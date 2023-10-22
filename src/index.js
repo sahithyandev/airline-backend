@@ -10,6 +10,7 @@ const flights = require("./routes/flights");
 const airports = require("./routes/airports");
 const flightsDetails = require("./routes/flights-details");
 const isRegisteredUser = require("./routes/is-registered-user");
+const retrieveUserData = require("./routes/retrieve-user-data");
 
 app.use(express.json());
 app.use(cors());
@@ -19,6 +20,7 @@ app.get("/flights", flights);
 app.get("/airports", airports);
 app.get("/flights-details", flightsDetails);
 app.post("/is-registered-user", isRegisteredUser);
+app.post("/retrieve-user-data", retrieveUserData);
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
