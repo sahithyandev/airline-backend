@@ -1,4 +1,6 @@
 const express = require("express");
+const cors = require("cors");
+
 const app = express();
 const mysql = require("./mysql-connector");
 
@@ -9,6 +11,7 @@ const airports = require("./routes/airports");
 const flightsDetails = require("./routes/flights-details");
 
 app.use(express.json());
+app.use(cors());
 
 app.post("/check-login", checkLogin);
 app.post("/flights", flights);
