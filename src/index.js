@@ -13,10 +13,10 @@ const flightsDetails = require("./routes/flights-details");
 app.use(express.json());
 app.use(cors());
 
-app.post("/check-login", checkLogin);
-app.post("/flights", flights);
-app.post("/airports", airports);
-app.post("/flights-details", flightsDetails);
+app.get("/check-login", checkLogin);
+app.get("/flights", flights);
+app.get("/airports", airports);
+app.get("/flights-details", flightsDetails);
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
