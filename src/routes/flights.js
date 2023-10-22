@@ -28,7 +28,7 @@ function handler(request, response) {
 					from: results[i]["Origin_airport"],
 					to: results[i]["Destination_airport"],
 					date: formatDate(new Date(results[i]["Schedule_date"])),
-					departure_time: results[i]["Departure_time"],
+					depature_time: results[i]["Departure_time"],
 					arrival_time: results[i]["Arrival_time"],
 					flightID: results[i]["Flight_ID"],
 				};
