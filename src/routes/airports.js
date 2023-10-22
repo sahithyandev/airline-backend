@@ -33,6 +33,7 @@ function handler(request, response) {
 					name = name.concat(", ", parentAddress.Name);
 					currentParentId = parentAddress.Parent_ID;
 				}
+				name = name.concat(` (${item.Airport_code})`);
 				airports.push({
 					code: item.Airport_code,
 					name,
