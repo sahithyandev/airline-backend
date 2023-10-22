@@ -5,7 +5,7 @@ const app = express();
 const mysql = require("./mysql-connector");
 
 // routes
-const checkLogin = require("./routes/check-login");
+const login = require("./routes/login");
 const flights = require("./routes/flights");
 const airports = require("./routes/airports");
 const flightsDetails = require("./routes/flights-details");
@@ -13,7 +13,7 @@ const flightsDetails = require("./routes/flights-details");
 app.use(express.json());
 app.use(cors());
 
-app.get("/check-login", checkLogin);
+app.get("/login", login);
 app.get("/flights", flights);
 app.get("/airports", airports);
 app.get("/flights-details", flightsDetails);
