@@ -14,6 +14,7 @@ const retrieveUserData = require("./routes/retrieve-user-data");
 const createAccount = require("./routes/create-account");
 const retrieveAdminData = require("./routes/retrieve-admin-data");
 const updateFlightDelay = require("./routes/update-flight-delay");
+const searchByFlight = require("./routes/search-by-flight");
 
 app.use(express.json());
 app.use(cors());
@@ -27,6 +28,7 @@ app.get("/retrieve-user-data", retrieveUserData);
 app.get("/create-user", createAccount);
 app.get("/retrieve-admin-data", retrieveAdminData);
 app.get("/update-flight-delay", updateFlightDelay);
+app.get("/search-by-flight", searchByFlight);
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
