@@ -26,7 +26,7 @@ async function handler(request, response) {
 		NIC,
 		phoneNumber,
 		passport,
-	} = request.body;
+	} = request.query;
 
 	if (
 		typeof name != "string" ||

@@ -19,10 +19,10 @@ app.use(cors());
 app.get("/flights", flights);
 app.get("/airports", airports);
 app.get("/flights-details", flightsDetails);
-app.post("/login", login);
-app.post("/has-booked-before", hasBookedBefore);
-app.post("/retrieve-user-data", retrieveUserData);
-app.post("/create-user", createAccount);
+app.get("/login", login);
+app.get("/has-booked-before", hasBookedBefore);
+app.get("/retrieve-user-data", retrieveUserData);
+app.get("/create-user", createAccount);
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {

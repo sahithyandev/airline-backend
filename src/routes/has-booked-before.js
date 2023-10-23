@@ -5,7 +5,7 @@ const mysql = require("../mysql-connector");
  * @param {import("express").Response} response
  */
 function handler(request, response) {
-	const passportNumber = request.body.passportNumber;
+	const passportNumber = request.query.passportNumber;
 
 	if (passportNumber == undefined) {
 		response.status(400).send("passport-number parameter is missing");

@@ -1,7 +1,7 @@
 const mysql = require("../mysql-connector");
 
 function handler(request, response) {
-	const { emailAddress, password } = request.body;
+	const { emailAddress, password } = request.query;
 
 	if (typeof emailAddress != "string" || typeof password != "string") {
 		response.status(400).send("Email address or password is missing");

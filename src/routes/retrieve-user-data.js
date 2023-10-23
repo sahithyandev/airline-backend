@@ -5,7 +5,7 @@ const mysql = require("../mysql-connector");
  * @param {import("express").Response} response
  */
 function handler(request, response) {
-	const emailAddress = request.body.emailAddress;
+	const emailAddress = request.query.emailAddress;
 
 	if (emailAddress == undefined) {
 		response.status(400).send("email address is missing");
