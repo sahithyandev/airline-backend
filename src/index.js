@@ -12,6 +12,7 @@ const flightsDetails = require("./routes/flights-details");
 const hasBookedBefore = require("./routes/has-booked-before");
 const retrieveUserData = require("./routes/retrieve-user-data");
 const createAccount = require("./routes/create-account");
+const retrieveAdminData = require("./routes/retrieve-admin-data");
 
 app.use(express.json());
 app.use(cors());
@@ -23,6 +24,7 @@ app.get("/login", login);
 app.get("/has-booked-before", hasBookedBefore);
 app.get("/retrieve-user-data", retrieveUserData);
 app.get("/create-user", createAccount);
+app.get("/retrieve-admin-data", retrieveAdminData);
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
