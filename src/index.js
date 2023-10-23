@@ -16,10 +16,10 @@ const createAccount = require("./routes/create-account");
 app.use(express.json());
 app.use(cors());
 
-app.get("/login", login);
 app.get("/flights", flights);
 app.get("/airports", airports);
 app.get("/flights-details", flightsDetails);
+app.post("/login", login);
 app.post("/has-booked-before", hasBookedBefore);
 app.post("/retrieve-user-data", retrieveUserData);
 app.post("/create-user", createAccount);
