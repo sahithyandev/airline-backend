@@ -9,7 +9,7 @@ const login = require("./routes/login");
 const flights = require("./routes/flights");
 const airports = require("./routes/airports");
 const flightsDetails = require("./routes/flights-details");
-const isRegisteredUser = require("./routes/is-registered-user");
+const hasBookedBefore = require("./routes/has-booked-before");
 const retrieveUserData = require("./routes/retrieve-user-data");
 
 app.use(express.json());
@@ -19,7 +19,7 @@ app.get("/login", login);
 app.get("/flights", flights);
 app.get("/airports", airports);
 app.get("/flights-details", flightsDetails);
-app.post("/is-registered-user", isRegisteredUser);
+app.post("/has-booked-before", hasBookedBefore);
 app.post("/retrieve-user-data", retrieveUserData);
 
 const PORT = process.env.PORT || 4000;

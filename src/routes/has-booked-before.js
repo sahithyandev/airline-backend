@@ -22,8 +22,8 @@ function handler(request, response) {
 				return;
 			}
 
-			const isRegisteredUser = results.length != 0;
-			response.status(200).send({ isRegisteredUser });
+			const hasBookedBefore = results.length != 0;
+			response.status(200).send({ hasBookedBefore });
 		}
 	);
 }
