@@ -17,6 +17,7 @@ const updateFlightDelay = require("./routes/update-flight-delay");
 const searchByFlight = require("./routes/search-by-flight");
 const searchByDate = require("./routes/search-by-date");
 const searchBookings = require("./routes/search-bookings");
+const routeSearch = require("./routes/route-search");
 
 app.use(express.json());
 app.use(cors());
@@ -33,6 +34,7 @@ app.get("/update-flight-delay", updateFlightDelay);
 app.get("/search-by-flight", searchByFlight);
 app.get("/search-by-date", searchByDate);
 app.get("/search-bookings", searchBookings);
+app.get("/route-search", routeSearch);
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
