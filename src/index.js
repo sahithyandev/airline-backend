@@ -19,6 +19,7 @@ const searchByDate = require("./routes/search-by-date");
 const searchBookings = require("./routes/search-bookings");
 const routeSearch = require("./routes/route-search");
 const aircraftRevenue = require("./routes/aircraft-revenue");
+const tickets = require("./routes/tickets");
 
 app.use(express.json());
 app.use(cors());
@@ -37,6 +38,7 @@ app.get("/search-by-date", searchByDate);
 app.get("/search-bookings", searchBookings);
 app.get("/route-search", routeSearch);
 app.get("/aircraft-revenue", aircraftRevenue);
+app.get("/tickets", tickets);
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
