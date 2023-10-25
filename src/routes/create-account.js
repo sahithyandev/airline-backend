@@ -1,4 +1,7 @@
+const bcrypt = require("bcrypt");
+
 const mysql = require("../mysql-connector");
+const { BCRYPT_SALT_ROUNDS } = require("../values");
 
 /**
  * @typedef NewUserDetailsObj
@@ -58,13 +61,27 @@ async function handler(request, response) {
 			resolve((count + 1).toString().padStart(4, "0"));
 		});
 	});
+	/** @type {string | null} */
+	const hashedPassword = await new Promise((resolve) => {
+		bcrypt.hash(password, BCRYPT_SALT_ROUNDS, (err, hash) => {
+			if (err) {
+				console.error(err);
+				resolve(null);
+			}
+			resolve(hash);
+		});
+	});
+	if (hashedPassword == null) {
+		response.status(500).send("Internal server error occured");
+		return;
+	}
 
 	mysql.query(
 		"INSERT INTO User (User_ID, Email_address, Password, Name, Address, Birthday, NIC, Phone_number, Passport_number, Membership_type, Travel_Count, Role) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
 		[
 			userId,
 			email,
-			password,
+			hashedPassword,
 			name,
 			address,
 			birthday,
